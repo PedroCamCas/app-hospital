@@ -1,0 +1,21 @@
+<div class="register-container">
+    <h2>Editar Usuario</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput formControlName="email" type="email" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Nueva contraseña</mat-label>
+            <input matInput formControlName="password" type="password" required />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Actualizar datos</button>
+    </form>
+</div>

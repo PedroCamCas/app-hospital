@@ -1,0 +1,45 @@
+.container {
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-container {
+    margin-top: 16px;
+    overflow-x: auto;
+}
+
+table {
+    width: 80%;
+    table-layout: fixed;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 30%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 30%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 30%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 10%;
+}
