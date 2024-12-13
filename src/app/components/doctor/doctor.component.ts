@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormatDoctorComponent } from '../../shared/format-doctor/format-doctor.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EditFormatDoctorComponent } from '../../shared/edit-format-doctor/edit-format-doctor.component';
+import { DetailDoctorComponent } from '../../shared/detail-doctor/detail-doctor.component';
 
 @Component({
   selector: 'app-doctor',
@@ -43,6 +44,10 @@ export class DoctorComponent {
         console.error('Error al cargar los datos:', err);
       },
     });
+  }
+
+  showPatientsAssigment(record: any){
+    this.openDetails(record.name, record.specialty, record.id)
   }
 
   addDoctor() {
@@ -80,6 +85,17 @@ export class DoctorComponent {
 
   openFormatEdit() {
     this.dialog.open(EditFormatDoctorComponent, {
+      width: '70%',
+    });
+  }
+
+  openDetails(name: string, specialty: string, id: number){
+    this.dialog.open(DetailDoctorComponent, {
+      data: {
+        name: name,
+        specialty: specialty,
+        id: id,
+      },
       width: '70%',
     });
   }

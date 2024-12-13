@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormatPatientComponent } from '../../shared/format-patient/format-patient.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EditFormatPatientComponent } from '../../shared/edit-format-patient/edit-format-patient.component';
+import { AssingDoctorComponent } from '../../shared/assing-doctor/assing-doctor.component';
 
 @Component({
   selector: 'app-patient',
@@ -41,6 +42,10 @@ export class PatientComponent {
         console.error('Error al cargar los datos:', err);
       },
     });
+  }
+
+  assingDoctor(record: any){
+    this.openAssingDoctor(record.id, record.name);
   }
 
   addPatient() {
@@ -79,6 +84,16 @@ export class PatientComponent {
 
   openFormatEdit() {
     this.dialog.open(EditFormatPatientComponent, {
+      width: '70%',
+    });
+  }
+
+  openAssingDoctor(id: number, name: string) {
+    this.dialog.open(AssingDoctorComponent,{
+      data:{
+        id: id,
+        name: name
+      },
       width: '70%',
     });
   }
